@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">FitnessTest</string>
+    <string name="name">Name: %s</string>
+    <string name="currency">Currencies: %s</string>
+    <string name="language">Language: %s</string>
+</resources>
