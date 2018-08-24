@@ -14,6 +14,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+/**
+ * This class handles the data fetching process in the background and also the
+ * data parsing process to fetch the required information from the JSON response from the API
+ */
 public class FetchCountries extends AsyncTask<Void, Void, ArrayList<Country>> {
 
     private LoadCompleteListener listener;
@@ -102,6 +106,11 @@ public class FetchCountries extends AsyncTask<Void, Void, ArrayList<Country>> {
             listener.onError();
     }
 
+    /**
+     * Deserialize method to get the objects from the JSONArray response from the API
+     * @param array jsonString to be deserialized
+     * @return list of all {@link Country} from the response
+     */
     private ArrayList<Country> getCountries(String array) {
         ArrayList<Country> result = new ArrayList<>();
 
@@ -145,6 +154,10 @@ public class FetchCountries extends AsyncTask<Void, Void, ArrayList<Country>> {
         return result;
     }
 
+    /**
+     * Callback to help listen to state changes and responses from the network call on the
+     * MainThread
+     */
     public interface LoadCompleteListener {
 
         void onStartLoading();

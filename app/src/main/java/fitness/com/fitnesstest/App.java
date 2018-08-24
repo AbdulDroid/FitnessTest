@@ -21,6 +21,11 @@ public class App extends Application {
         app = this;
     }
 
+    /**
+     * Converts dp to pixel
+     * @param dp value in dp
+     * @return value in pixels
+     */
     public static int getPx(int dp) {
         if (dpi == 0) {
             DisplayMetrics displayMetrics = app.getResources().getDisplayMetrics();
@@ -29,6 +34,10 @@ public class App extends Application {
         return dp * dpi / 160;
     }
 
+    /**
+     * Exposes resources
+     * @return resources
+     */
     public static Resources getRes() {
         return app.getResources();
     }
@@ -37,6 +46,12 @@ public class App extends Application {
         return app.getApplicationContext();
     }
 
+    /**
+     * Creates a bitmap from vector drawables
+     * @param context to use for the conversion
+     * @param drawableId of the drawable to convert
+     * @return created bitmap from the vector
+     */
     public static Bitmap getBmpFromVctrDrwbl(Context context, int drawableId) {
         Drawable drawable = ContextCompat.getDrawable(context, drawableId);
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {

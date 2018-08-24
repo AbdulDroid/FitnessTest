@@ -15,14 +15,14 @@ public class Country {
     public String flag;
 
 
-   class Currency {
+    public class Currency {
 
-       public String name;
+        public String name;
     }
 
 
-    class Language {
+    public class Language {
 
-       public String name;
+        public String name;
     }
 }
